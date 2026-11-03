@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: spring_TaskManager_final
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none # Чтобы Hibernate не перетирал таблицы из schema.sql
+    show-sql: true
+  sql:
+    init:
+      mode: always   # Чтобы Spring Boot выполнял schema.sql и data.sql
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*, prometheus"  # Відкриваємо всі ендпоінти
+
+logging:
+  level:
+    root: INFO                                              # Рівень логування за замовчуванням
+    com.example.spring_taskmanager_final: DEBUG             # Рівень логування для власного пакету
+    org.hibernate.SQL: DEBUG                                # Логування SQL-запитів (якщо використовується JPA)
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.security: DEBUG            # запити, пов’язані з авторизацією й аутентифікацією, будуть логуватися
+
+
+
+
+
+
+
+

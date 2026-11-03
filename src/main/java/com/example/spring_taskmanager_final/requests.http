@@ -1,0 +1,11 @@
+### динамічно змінювати рівень логування для будь-якого компонента додатка через API
+### щоб змінити рівень логування для com.example.spring_taskmanager_final на TRACE, виконай HTTP-запит:
+
+POST /actuator/loggers/com.example.spring_taskmanager_final
+Content-Type: application/json
+
+{
+  "configuredLevel": "TRACE"
+}
+
+
